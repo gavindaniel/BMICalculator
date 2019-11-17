@@ -15,6 +15,7 @@
 		4C9F94AF23806BA500A56040 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C9F94AD23806BA500A56040 /* LaunchScreen.storyboard */; };
 		4C9F94BA23806BA600A56040 /* BMICalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9F94B923806BA600A56040 /* BMICalculatorTests.swift */; };
 		4C9F94C523806BA600A56040 /* BMICalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9F94C423806BA600A56040 /* BMICalculatorUITests.swift */; };
+		4CDBC2222381BC2B00CA6567 /* BMI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDBC2212381BC2B00CA6567 /* BMI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		4C9F94C023806BA600A56040 /* BMICalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BMICalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C9F94C423806BA600A56040 /* BMICalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMICalculatorUITests.swift; sourceTree = "<group>"; };
 		4C9F94C623806BA600A56040 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CDBC2212381BC2B00CA6567 /* BMI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +101,12 @@
 		4C9F94A123806BA400A56040 /* BMICalculator */ = {
 			isa = PBXGroup;
 			children = (
+				4CDBC2202381BBF600CA6567 /* Model */,
+				4CDBC21F2381BBEF00CA6567 /* View */,
+				4CDBC21E2381BBE100CA6567 /* Controller */,
 				4C9F94A223806BA400A56040 /* AppDelegate.swift */,
 				4C9F94A423806BA400A56040 /* SceneDelegate.swift */,
-				4C9F94A623806BA400A56040 /* ViewController.swift */,
-				4C9F94A823806BA400A56040 /* Main.storyboard */,
 				4C9F94AB23806BA500A56040 /* Assets.xcassets */,
-				4C9F94AD23806BA500A56040 /* LaunchScreen.storyboard */,
 				4C9F94B023806BA500A56040 /* Info.plist */,
 			);
 			path = BMICalculator;
@@ -126,6 +128,31 @@
 				4C9F94C623806BA600A56040 /* Info.plist */,
 			);
 			path = BMICalculatorUITests;
+			sourceTree = "<group>";
+		};
+		4CDBC21E2381BBE100CA6567 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4C9F94A623806BA400A56040 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4CDBC21F2381BBEF00CA6567 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4C9F94AD23806BA500A56040 /* LaunchScreen.storyboard */,
+				4C9F94A823806BA400A56040 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4CDBC2202381BBF600CA6567 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4CDBC2212381BC2B00CA6567 /* BMI.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CDBC2222381BC2B00CA6567 /* BMI.swift in Sources */,
 				4C9F94A723806BA400A56040 /* ViewController.swift in Sources */,
 				4C9F94A323806BA400A56040 /* AppDelegate.swift in Sources */,
 				4C9F94A523806BA400A56040 /* SceneDelegate.swift in Sources */,

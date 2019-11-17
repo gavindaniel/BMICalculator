@@ -17,35 +17,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var bmiLabel: UILabel!
     @IBOutlet weak var riskLabel: UILabel!
     
-    struct bmiResults: Decodable {
-        let bmi: Float
-        let more: [String]
-        let risk: String
-    }
-    
     var links = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-
-
+        
         mainView.addGestureRecognizer(tap)
-        
-        
         
         self.heightTextField.delegate = self
         self.weightTextField.delegate = self
         
     }
     
-    
     //Calls this function when the tap is recognized.
     @objc func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
     
@@ -63,33 +51,33 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let weightData = weightTextField.text!
         
         let urlAsString = "http://webstrar99.fulton.asu.edu/page3/Service1.svc/calculateBMI?height=\(heightData)&weight=\(weightData)"
-        
+
         let url = URL(string: urlAsString)!
-        
+
         let urlSession = URLSession.shared
-        
+
         let jsonQuery = urlSession.dataTask(with: url, completionHandler: { data, response, error -> Void in
-            
+
             let decoder = JSONDecoder()
             let jsonResult = try! decoder.decode(bmiResults.self, from: data!)
-            
+
             let bmi = jsonResult.bmi
             let more = jsonResult.more
             let risk = jsonResult.risk
-            
+
             let bmiRes = String(format: "%.1f", bmi)
             let riskRes = risk
-            
+
             self.links = more
-            
+
             DispatchQueue.main.async {
                 self.bmiLabel.text = bmiRes
                 self.riskLabel.text = riskRes
                 self.riskLabel.textColor = self.getColor(bmi: bmi)
             }
-            
+
         })
-        
+
         jsonQuery.resume()
         
     }
